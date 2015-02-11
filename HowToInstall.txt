@@ -1,0 +1,29 @@
+##########################################
+
+How To Install SFML 2.2 on BLinux
+
+##########################################
+
+1] Create a folder that will contains your project.
+
+2] Copy the 'include' and 'lib' folders into your project folder. (Reminder: 'cp -R' to copy recursivly)
+
+3] Copy the Makefile and main.cpp files into your project folder.
+
+4] If the Makefile doesn't work, that's probably because you don't have the good version of GLEW installed on your computer.
+   Run the command 'sudo rpm -i libGLEW1_10-1.10.0-2.3.1.x86_64.rpm' in this folder. Obviously, you need to be root to perform this action.
+   
+   If you want to install it on an other system than BLinux, you can find all libGLEW rpms here: 'http://rpmfind.net/linux/rpm2html/search.php?query=libGLEW.so.1.10%28%29%2864bit%29'.
+
+5] If the Makefile worked and a weird message like this './sfml-app: error while loading shared libraries: libsfml-graphics.so.2.2.0: cannot open shared object file:
+   No such file or directory' appears, you need to run the command:
+   
+	'export LD_LIBRARY_PATH=/home/login_x/YourFolderToSFML/lib'
+
+   For example, in my case, I would type: 'export LD_LIBRARY_PATH=/home/malik_r/SFML/test/lib/'.
+
+
+
+If you want more information about SFML, I suggest you to go to it's official website 'www.sfml-dev.org' where you can find good tutorials on how to make applications using the SFML.
+
+Good luck and Have fun with SFML 2.2 !
